@@ -1,0 +1,305 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+/* =========================
+   BODY (PREMIUM GRADIENT + ANIMATION)
+========================= */
+body{
+    min-height:100vh;
+    width:100%;
+
+    background:linear-gradient(135deg,#4f46e5,#7c3aed,#2563eb);
+    background-size:300% 300%;
+    animation:gradientMove 8s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* =========================
+   INDEX / LANDING PAGE (FIXED + CLEAN)
+========================= */
+.landing{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.landing-content{
+    text-align:center;
+    color:white;
+    animation:fadeUp 1.2s ease;
+}
+
+/* smooth up-down floating */
+.landing-content h1{
+    font-size:58px;
+    font-weight:800;
+    animation:floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
+
+.landing-content p{
+    font-size:18px;
+    opacity:0.9;
+    margin-top:10px;
+    animation:fadeUp 1.6s ease;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* BUTTON GROUP CENTER */
+.button-group{
+    display:flex;
+    justify-content:center;
+    margin-top:25px;
+    gap:15px;
+}
+
+/* =========================
+   BUTTONS (GLOBAL PREMIUM)
+========================= */
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:12px 18px;
+    min-width:130px;
+
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    color:white;
+    text-decoration:none;
+
+    border:none;
+    border-radius:12px;
+    font-weight:500;
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+}
+
+.btn:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 14px 28px rgba(0,0,0,0.3);
+}
+
+/* SMALL BUTTON */
+.small-btn{
+    padding:10px 16px;
+    font-size:14px;
+    min-width:auto;
+}
+
+/* =========================
+   MAIN CONTAINERS
+========================= */
+.container,
+.resume-box,
+.form-box,
+.dashboard-box{
+    width:90%;
+    max-width:800px;
+    margin:60px auto;
+    padding:30px;
+    background:white;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1{
+    color:#2c2c2c;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+h2{
+    color:#6a11cb;
+    margin-bottom:10px;
+}
+
+h3{
+    margin-top:15px;
+    color:#444;
+    border-bottom:2px solid #6a11cb;
+    padding-bottom:5px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#6a11cb;
+    box-shadow:0 0 8px rgba(106,17,203,0.2);
+}
+
+textarea{
+    height:120px;
+    resize:none;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+.card-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.card{
+    padding:18px 22px;
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+    color:white;
+    text-decoration:none;
+
+    border-radius:14px;
+    min-width:170px;
+    text-align:center;
+
+    transition:all 0.3s ease;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 14px 30px rgba(0,0,0,0.3);
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.2);
+    transform:skewX(-20deg);
+    transition:0.6s;
+}
+
+.card:hover::before{
+    left:120%;
+}
+
+/* =========================
+   RESUME VIEW (PROFILE STYLE)
+========================= */
+.resume-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+    margin-top:20px;
+}
+
+.profile-card{
+    width:90%;
+    max-width:700px;
+    background:white;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.profile-card:hover{
+    transform:translateY(-6px);
+}
+
+.profile-header{
+    border-bottom:2px solid #6a11cb;
+    margin-bottom:15px;
+    padding-bottom:10px;
+}
+
+.profile-header h2{
+    margin:0;
+    color:#2c2c2c;
+}
+
+.profile-header p{
+    margin:3px 0;
+    color:gray;
+    font-size:14px;
+}
+
+.profile-body h3{
+    margin-top:12px;
+    color:#6a11cb;
+}
+
+.profile-body p{
+    margin:6px 0 12px;
+    color:#444;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:600px){
+
+    .landing-content h1{
+        font-size:34px;
+    }
+
+    .button-group,
+    .card-container{
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .btn,
+    .card{
+        width:100%;
+    }
+}
