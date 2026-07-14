@@ -4,13 +4,6 @@ Resume Hub is a Java-based web application that enables users to create ATS-frie
 
 ---
 
-## 🚀 Live Demo
-
-🔗 **Project Link:**  
-LIVE_DEMO_LINK
-
----
-
 ## ✨ Features
 
 - 👤 User Registration & Login
